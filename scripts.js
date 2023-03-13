@@ -1,7 +1,7 @@
 //variable with reference to the grid container
 const gridContainer = document.getElementById('grid-container');
 const gridButton = document.querySelector('#create-grid');
-let size = 4;
+let size = 10;
 
 //gives the button an onclick function to initiate the grid creation
 gridButton.onclick = () => createGrid(size);
@@ -15,8 +15,8 @@ function createGrid(size) {
 
 //this function will apply a grid layout
 function gridLayout(height, width) {
-  gridContainer.style.gridTemplateColumns = `repeat(${width}, 1fr)`
-  gridContainer.style.gridTemplateRows = `repeat(${height}, 1fr)`
+  gridContainer.style.gridTemplateColumns = `repeat(${width}, auto)`
+  gridContainer.style.gridTemplateRows = `repeat(${height}, auto)`
 }
 
 //this function will fill a grid with divs
@@ -25,7 +25,6 @@ const fillGrid = (size, color) => {
   for (let i=0; i<numOfBlocks; i++){
     let newDiv = document.createElement("div");
     newDiv.id = `card ${i}`;
-    newDiv.innerText = `card ${i}`;
     newDiv.style.border = "1px black solid";
     gridContainer.appendChild(newDiv);
     };
