@@ -3,17 +3,18 @@ const gridContainer = document.getElementById('grid-container');
 const gridButton = document.querySelector('#create-grid');
 let size = 4;
 
-//a button to initiate the grid creation
+//gives the button an onclick function to initiate the grid creation
 gridButton.onclick = () => createGrid(size);
 
 //this function lays out and fills the grid with divs
 function createGrid(size) {
+  deleteGrid();
   gridLayout(size, size);
   fillGrid(size, "lavender");
 }
 
 //this function will apply a grid layout
-const gridLayout = (height, width) => {
+function gridLayout(height, width) {
   gridContainer.style.gridTemplateColumns = `repeat(${width}, 1fr)`
   gridContainer.style.gridTemplateRows = `repeat(${height}, 1fr)`
 }
@@ -28,4 +29,9 @@ const fillGrid = (size, color) => {
     newDiv.style.border = "1px black solid";
     gridContainer.appendChild(newDiv);
     };
+}
+
+//removes all content within grid-container
+function deleteGrid() {
+  gridContainer.innerHTML = '';
 }
