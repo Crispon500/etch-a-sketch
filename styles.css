@@ -1,4 +1,3 @@
-body {
-    width: auto;
-    height: 100vh;
+.grid-container{
+    display:grid;
 }
