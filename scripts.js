@@ -4,6 +4,7 @@ const gridContainer = document.getElementById('grid-container');
 //create buttons
 const resetButton = document.querySelector('#reset-grid');
 const eraserButton = document.querySelector('#erasor-mode');
+const drawButton = document
 
 //default grid size and color
 let size = 50;
@@ -14,7 +15,6 @@ let color = "black";
 resetButton.onclick = () => createGrid(size);
 eraserButton.onclick = () => setColor("white");
 
-
 //this function lays out and fills the grid with divs
 function createGrid(size) {
   deleteGrid();
@@ -22,7 +22,6 @@ function createGrid(size) {
   fillGrid(size);
   setColor("black");
 }
-
 //this function will apply a grid layout
 function gridLayout(height, width) {
   gridContainer.style.gridTemplateColumns = `repeat(${width}, auto)`
@@ -39,11 +38,12 @@ const fillGrid = (size) => {
     newDiv.onmouseover = () => {newDiv.style.backgroundColor = color};
     };
 }
-
 //removes all content within grid-container
 function deleteGrid() {
   gridContainer.innerHTML = '';
 }
+//initialize the grid on loading
+createGrid(size);
 
 function setColor(newColor) {
   color = newColor
