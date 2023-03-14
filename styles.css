@@ -4,14 +4,16 @@ h1 {
 
 #content-container{
     display:flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
-.buttonContainer {
+.button-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    gap:15px;
 }
 
 .grid-container{
