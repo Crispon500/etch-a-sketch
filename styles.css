@@ -9,6 +9,11 @@ h1 {
     align-items: center;
 }
 
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .grid-container{
     border: solid black;
     display:grid;
