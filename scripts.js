@@ -1,7 +1,7 @@
 //variable with reference to the grid container
 const gridContainer = document.getElementById('grid-container');
 const gridButton = document.querySelector('#create-grid');
-let size = 15;
+let size = 50;
 
 //gives the button an onclick function to initiate the grid creation
 gridButton.onclick = () => createGrid(size);
@@ -26,6 +26,7 @@ const fillGrid = (size, color) => {
     let newDiv = document.createElement("div");
     newDiv.id = `card ${i}`;
     gridContainer.appendChild(newDiv);
+    newDiv.onmouseover = () => {newDiv.style.backgroundColor = "black"};
     };
 }
 
