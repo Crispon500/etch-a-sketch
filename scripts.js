@@ -3,15 +3,17 @@ const gridContainer = document.getElementById('grid-container');
 
 //create buttons
 const resetButton = document.querySelector('#reset-grid');
-const eraserButton = document.querySelector('#erasorButton');
+const eraserButton = document.querySelector('#erasor-mode');
 
 //default grid size and color
 let size = 50;
 let color = "black";
 
 
-//gives the button an onclick function to initiate the grid creation
+//assign button functions
 resetButton.onclick = () => createGrid(size);
+eraserButton.onclick = () => setColor("white");
+
 
 //this function lays out and fills the grid with divs
 function createGrid(size) {
