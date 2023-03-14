@@ -18,6 +18,7 @@ function createGrid(size) {
   deleteGrid();
   gridLayout(size, size);
   fillGrid(size);
+  setColor("black");
 }
 
 //this function will apply a grid layout
@@ -40,4 +41,8 @@ const fillGrid = (size) => {
 //removes all content within grid-container
 function deleteGrid() {
   gridContainer.innerHTML = '';
+}
+
+function setColor(newColor) {
+  color = newColor
 }
