@@ -13,19 +13,17 @@ let color = "black";
 
 
 //assign button functions
-resetButton.onclick = () => {
-  const selectedSize = [].filter
-    .call(sizeOption, option => option.selected)
-    .map(option => option.value);
-  size = selectedSize;
-  createGrid();
-}
+resetButton.onclick = () => createGrid();
 eraserButton.onclick = () => setColor("white");
 drawButton.onclick = () => setColor("black");
 
 
 //this function lays out and fills the grid with divs
 function createGrid() {
+  const selectedSize = [].filter
+          .call(sizeOption, option => option.selected)
+          .map(option => option.value);
+  size = selectedSize;
   deleteGrid();
   gridLayout(size, size);
   fillGrid(size);
