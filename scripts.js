@@ -3,7 +3,7 @@ const gridContainer = document.getElementById('grid-container');
 
 //create buttons
 const resetButton = document.querySelector('#reset-grid');
-const eraserButton = document.querySelector('#erasor-mode');
+const eraserButton = document.querySelector('#eraser-mode');
 const drawButton = document.querySelector("#draw-mode");
 const sizeOption = document.querySelector("#size")
 
