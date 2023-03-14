@@ -5,20 +5,27 @@ const gridContainer = document.getElementById('grid-container');
 const resetButton = document.querySelector('#reset-grid');
 const eraserButton = document.querySelector('#erasor-mode');
 const drawButton = document.querySelector("#draw-mode");
+const sizeOption = document.querySelector("#size")
 
 //default grid size and color
-let size = 50;
+let size = 64;
 let color = "black";
 
 
 //assign button functions
-resetButton.onclick = () => createGrid(size);
+resetButton.onclick = () => {
+  const selectedSize = [].filter
+    .call(sizeOption, option => option.selected)
+    .map(option => option.value);
+  size = selectedSize;
+  createGrid();
+}
 eraserButton.onclick = () => setColor("white");
 drawButton.onclick = () => setColor("black");
 
 
 //this function lays out and fills the grid with divs
-function createGrid(size) {
+function createGrid() {
   deleteGrid();
   gridLayout(size, size);
   fillGrid(size);
