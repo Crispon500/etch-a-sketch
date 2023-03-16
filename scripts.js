@@ -3,19 +3,21 @@ const gridContainer = document.getElementById('grid-container');
 
 //create buttons
 const resetButton = document.querySelector('#reset-grid');
-const eraserButton = document.querySelector('#eraser-mode');
 const drawButton = document.querySelector("#draw-mode");
+const rainbowButton = document.querySelector('#rainbow-mode');
+const eraserButton = document.querySelector('#eraser-mode');
 const sizeOption = document.querySelector("#size")
 
 //default grid size and color
 let size = 64;
-let color = "black";
+let colorMode = "black";
 
 
 //assign button functions
 resetButton.onclick = () => createGrid();
-eraserButton.onclick = () => setColor("white");
-drawButton.onclick = () => setColor("black");
+eraserButton.onclick = () => colorMode = "erasor";
+drawButton.onclick = () => colorMode = "black";
+rainbowButton.onclick = () => colorMode = "rainbow";
 
 
 //this function lays out and fills the grid with divs
@@ -42,7 +44,7 @@ const fillGrid = (size) => {
     let newDiv = document.createElement("div");
     newDiv.id = `card ${i}`;
     gridContainer.appendChild(newDiv);
-    newDiv.onmouseover = () => {newDiv.style.backgroundColor = color};
+    newDiv.onmouseover = () => {newDiv.style.backgroundColor = selectColor(colorMode)};
     };
 }
 //removes all content within grid-container
@@ -52,6 +54,17 @@ function deleteGrid() {
 //initialize the grid on loading
 createGrid(size);
 
-function setColor(newColor) {
-  color = newColor
+function selectColor(mode) {
+
+  switch (mode){
+    case "black":
+      return "black";
+    case "erasor":
+      return "white";
+    case "rainbow": 
+      return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`
+    default:
+      return "black";
+  }
+
 }
