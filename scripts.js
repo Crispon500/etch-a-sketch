@@ -29,7 +29,7 @@ function createGrid() {
   deleteGrid();
   gridLayout(size, size);
   fillGrid(size);
-  setColor("black");
+  selectColor("black");
 }
 //this function will apply a grid layout
 function gridLayout(height, width) {
